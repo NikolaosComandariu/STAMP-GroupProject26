@@ -22,8 +22,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
 	float RandomPrice(float min, float max);
+
 	FString SelectRandomCriteria();
+
+	// TODO: ChangeButtonColour();
+
 private:
 	// Container for criterion from GDD.
 	TArray<FString> criterion;

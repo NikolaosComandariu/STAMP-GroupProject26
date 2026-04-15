@@ -1,5 +1,6 @@
 #include "CriteriaButtonManager.h"
 #include <string>
+#include <Math/UnrealMathUtility.h>
 
 // Sets default values for this component's properties
 UCriteriaButtonManager::UCriteriaButtonManager()
@@ -45,19 +46,18 @@ void UCriteriaButtonManager::TickComponent(float DeltaTime, ELevelTick TickType,
 }
 
 float UCriteriaButtonManager::RandomPrice(float min, float max)
-{
-	float result;
-	// TODO: Randomly generate number between min and max.
-	//result = 
+{	
+	float randomNumber = FMath::RandRange(min, max);
 
-	return result;
+	return randomNumber;
 }
 
 FString UCriteriaButtonManager::SelectRandomCriteria()
 {
-	FString result;
+	FString randomCriteria;
 
-	result = criterion
+	
+	randomCriteria = criterion[RandomPrice(0, criterion)];
 
-	return result;
+	return randomCriteria;
 }
