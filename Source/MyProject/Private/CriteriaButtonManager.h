@@ -6,7 +6,6 @@
 #include "Components/ActorComponent.h"
 #include "CriteriaButtonManager.generated.h"
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class UCriteriaButtonManager : public UActorComponent
 {
@@ -23,6 +22,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
+	float RandomPrice(float min, float max);
+	FString SelectRandomCriteria();
+private:
+	// Container for criterion from GDD.
+	TArray<FString> criterion;
 };
